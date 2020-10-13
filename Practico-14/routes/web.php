@@ -54,8 +54,8 @@ Route::group(['middleware'=>'auth'],function(){
     Route::get('/post/create','PostController@create')->name('post.create');
     Route::post('post','PostController@store')->name('post.store');
     Route::get('/post/{id}/edit', 'PostController@edit')->name('post.edit');
-    RRoute::match(['put','patch'],'post/{post}', 'PostController@update')->name('post.update');
+    Route::match(['put','patch'],'post/{post}', 'PostController@update')->name('post.update');
 
-    Route::delete('post/{id}', 'Post@destroy')->name('post.destroy');
+    Route::delete('post/{id}', 'PostController@destroy')->name('post.destroy');
 
 });
